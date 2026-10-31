@@ -124,11 +124,18 @@
 
 (function($) {
 
-    // Usamos delegación de eventos para asegurar que detecte el clic siempre
-    $(document).on('click', '.item .image.fit', function(e) {
-        e.preventDefault(); // Evita que la página suba o vaya al '#'
+    // We use multiple selectors separated by commas to include the image, the header, and the box.
+    $(document).on('click', '.item .image.fit, .item header, .item .description-box', function(e) {
         
-        // Muestra u oculta la caja de texto de esa tarjeta específica
+        // Optional but recommended: if there are links (<a>) within the header or description,
+		// we allow them to function normally without blocking them.
+        if ($(e.target).is('a') || $(e.target).closest('a').length > 0) {
+            return;
+        }
+
+        e.preventDefault(); // Prevent the page from scrolling up or navigating to '#'
+        
+        // Show or hide the text box for that specific card
         $(this).closest('.item').find('.description-box').toggleClass('active');
     });
 
