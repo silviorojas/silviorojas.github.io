@@ -120,11 +120,15 @@
 					visibleClass: 'header-visible'
 				});
 
-	// --- LOGIC FOR OPENING/CLOSING THE TEXT BOX ---
-    $('.item .image.fit').on('click', function(e) {
-        e.preventDefault(); // Prevent the page from jumping
+})(jQuery);
+
+(function($) {
+
+    // Usamos delegación de eventos para asegurar que detecte el clic siempre
+    $(document).on('click', '.item .image.fit', function(e) {
+        e.preventDefault(); // Evita que la página suba o vaya al '#'
         
-        // Find the .description-box within the same item (.item) and toggle the 'active' class.
+        // Muestra u oculta la caja de texto de esa tarjeta específica
         $(this).closest('.item').find('.description-box').toggleClass('active');
     });
 
