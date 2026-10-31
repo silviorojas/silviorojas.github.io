@@ -120,4 +120,12 @@
 					visibleClass: 'header-visible'
 				});
 
+	// --- LOGIC FOR OPENING/CLOSING THE TEXT BOX ---
+    $('.item .image.fit').on('click', function(e) {
+        e.preventDefault(); // Prevent the page from jumping
+        
+        // Find the .description-box within the same item (.item) and toggle the 'active' class.
+        $(this).closest('.item').find('.description-box').toggleClass('active');
+    });
+
 })(jQuery);
