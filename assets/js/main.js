@@ -127,12 +127,6 @@
     // We use multiple selectors separated by commas to include the image, the header, and the box.
     $(document).on('click', '.item .image.fit, .item header, .item .description-box', function(e) {
         
-        // Optional but recommended: if there are links (<a>) within the header or description,
-		// we allow them to function normally without blocking them.
-        if ($(e.target).is('a') || $(e.target).closest('a').length > 0) {
-            return;
-        }
-
         e.preventDefault(); // Prevent the page from scrolling up or navigating to '#'
         
         // Show or hide the text box for that specific card
