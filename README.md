@@ -1,6 +1,6 @@
 # silviorojas.github.io
 
-## My IT, Networking, and Cybersecurity project portfolio
+# My IT, Networking, and Cybersecurity project portfolio
 
 <p align="center">
   <a href="https://silviorojas.github.io"><img src="https://img.icons8.com/color/96/000000/internet.png" height="16"/>Portfolio</a> •
@@ -9,7 +9,4 @@
   <a href="mailto:rojassilvioomar@gmail.com"><img src="https://img.icons8.com/color/96/000000/email.png" height="16"/>Email</a>
 </p>
 
-<p align="center"> 
-  ![Preview](./images/abstract.gif) 
-</p>
-
+![Preview](./images/abstract.gif) 
