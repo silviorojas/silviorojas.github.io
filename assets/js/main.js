@@ -125,7 +125,7 @@
 (function($) {
 
     // We use multiple selectors separated by commas to include the image, the header, and the box.
-    $(document).on('click', '.item .image.fit, .item header, .item .description-box', function(e) {
+    $(document).on('click', '.item .image.fit, .item header', function(e) {
         
         e.preventDefault(); // Prevent the page from scrolling up or navigating to '#'
         
