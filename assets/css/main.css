@@ -328,11 +328,11 @@ input, select, textarea {
 		}
 
 		.row > .col-4 {
-			width: 33.33333%;
+			width: 48%; /* Changed from 33.33333% to 48% */
 		}
 
 		.row > .off-4 {
-			margin-left: 33.33333%;
+			margin-left: 48%; /* Changed from 33.33333% to 48% */
 		}
 
 		.row > .col-5 {
@@ -571,11 +571,11 @@ input, select, textarea {
 				}
 
 				.row > .col-4-wide {
-					width: 33.33333%;
+					width: 48%; /* Changed from 33.33333% to 48% */
 				}
 
 				.row > .off-4-wide {
-					margin-left: 33.33333%;
+					margin-left: 48%; /* Changed from 33.33333% to 48% */
 				}
 
 				.row > .col-5-wide {
@@ -816,11 +816,11 @@ input, select, textarea {
 				}
 
 				.row > .col-4-normal {
-					width: 33.33333%;
+					width: 48%; /* Changed from 33.33333% to 48% */
 				}
 
 				.row > .off-4-normal {
-					margin-left: 33.33333%;
+					margin-left: 48%; /* Changed from 33.33333% to 48% */
 				}
 
 				.row > .col-5-normal {
@@ -1061,11 +1061,11 @@ input, select, textarea {
 				}
 
 				.row > .col-4-narrow {
-					width: 33.33333%;
+					width: 48%; /* Changed from 33.33333% to 48% */
 				}
 
 				.row > .off-4-narrow {
-					margin-left: 33.33333%;
+					margin-left: 48%; /* Changed from 33.33333% to 48% */
 				}
 
 				.row > .col-5-narrow {
@@ -1306,11 +1306,11 @@ input, select, textarea {
 				}
 
 				.row > .col-4-narrower {
-					width: 33.33333%;
+					width: 48%; /* Changed from 33.33333% to 48% */
 				}
 
 				.row > .off-4-narrower {
-					margin-left: 33.33333%;
+					margin-left: 48%; /* Changed from 33.33333% to 48% */
 				}
 
 				.row > .col-5-narrower {
@@ -1551,11 +1551,11 @@ input, select, textarea {
 				}
 
 				.row > .col-4-mobile {
-					width: 33.33333%;
+					width: 48%; /* Changed from 33.33333% to 48% */
 				}
 
 				.row > .off-4-mobile {
-					margin-left: 33.33333%;
+					margin-left: 48%; /* Changed from 33.33333% to 48% */
 				}
 
 				.row > .col-5-mobile {
