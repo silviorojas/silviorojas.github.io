@@ -1848,6 +1848,8 @@ input, select, textarea {
 	form textarea {
 		position: relative;
 		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
 		display: block;
 		border: 0;
 		outline: 0;
