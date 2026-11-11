@@ -2692,5 +2692,40 @@ input, select, textarea {
 				#footer .copyright li:first-child {
 					margin-top: 0;
 				}
+	}
 
+/* Site is under construction button */
+	#construction-banner {
+		position: fixed;
+		top: 0;
+		left: 378px;
+		right: 0;
+		z-index: 10000;
+		background: #f5c518;
+		color: #222;
+		text-align: center;
+		font-size: 16px;
+		font-weight: 600;
+		padding: 0.6em 1em;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+		}
+
+	#construction-banner button {
+		background: none;
+		border: 0;
+		box-shadow: none;
+		color: #222;
+		font-size: 20px;
+		line-height: 1;
+		padding: 0 0.5em;
+		margin-left: 1em;
+		cursor: pointer;
+		height: auto;
+		min-width: 0;
+	}
+
+	@media screen and (max-width: 1280px) {
+		#construction-banner {
+			left: 0;
+		}
 	}
