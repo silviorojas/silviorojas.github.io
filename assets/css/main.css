@@ -2746,3 +2746,79 @@ input, select, textarea {
 #portfolio .row {
     align-items: flex-start;
 }
+
+
+/* ===== About gallery ===== */
+.about-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.about-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: zoom-in;
+    transition: transform .3s;
+}
+
+.about-gallery img:hover { transform: scale(1.04); }
+
+/* ===== Lightbox ===== */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .25s, visibility .25s;
+    z-index: 99999;
+    touch-action: pan-y;            /* Vertical scrolling is allowed*/
+}
+
+.lightbox.open { opacity: 1; visibility: visible; }
+
+.lightbox figure { margin: 0; max-width: 92vw; text-align: center; }
+
+.lightbox img {
+    max-width: 92vw;
+    max-height: 80vh;
+    border-radius: 8px;
+    user-select: none;
+    -webkit-user-drag: none;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.lightbox img.slide-left  { transform: translateX(-40px); opacity: 0; }
+.lightbox img.slide-right { transform: translateX(40px);  opacity: 0; }
+
+.lightbox figcaption { color: #eee; margin-top: .75rem; font-size: .95rem; }
+
+.lightbox button {
+    position: absolute;
+    background: none;
+    border: none;
+    box-shadow: none;
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: .5rem 1rem;
+    opacity: .8;
+}
+
+.lightbox button:hover { opacity: 1; }
+.lb-close { top: 1rem; right: 1rem; }
+.lb-prev  { left: 1rem; }
+.lb-next  { right: 1rem; }
+
+@media (max-width: 736px) {
+    /* On mobile, arrows get in the way, navigation is done via swiping. */
+    .lb-prev, .lb-next { display: none; }
+}

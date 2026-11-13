@@ -215,7 +215,12 @@
 								<h2>About Me</h2>
 							</header>
 
-							<a href="images/aboutme.JPG" target="_blank" class="image featured"><img src="images/aboutme.JPG" alt="" /></a>
+							<div class="about-gallery">
+								<img src="images/aboutme.JPG" alt="Silvio Omar Rojas" loading="lazy" />
+								<img src="images/project03.jpg" alt="Photo2" loading="lazy" />
+								<img src="images/project04.jpg" alt="Photo3" loading="lazy" />
+								<img src="images/project05.jpg" alt="Photo4" loading="lazy" />
+							</div>
 
 							<p>I am an IT professional with approximately 8 years of experience in network administration, IT infrastructure, and network security across both public institutions and international corporate environments.</p>
 
@@ -269,6 +274,17 @@
 					</ul>
 
 			</div>
+		
+		<!-- Lightbox -->
+			<div id="lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-label="Visor de imágenes">
+				<button class="lb-close" aria-label="Cerrar">&times;</button>
+				<button class="lb-prev" aria-label="Anterior">&#10094;</button>
+				<figure>
+					<img id="lb-img" src="" alt="" />
+					<figcaption id="lb-caption"></figcaption>
+				</figure>
+				<button class="lb-next" aria-label="Siguiente">&#10095;</button>
+			</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
@@ -278,6 +294,7 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script src="assets/js/lightbox.js"></script>
 
 	</body>
 </html>
