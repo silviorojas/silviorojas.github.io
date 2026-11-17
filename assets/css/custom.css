@@ -1,0 +1,49 @@
+/* Image container */
+#portfolio .item .image {
+  position: relative;
+  display: block;
+  overflow: hidden;   /* prevents the zoom from going outside the frame */
+}
+
+#portfolio .item .image img {
+  display: block;
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* Hover effect */
+#portfolio .item .image:hover img,
+#portfolio .item .image:focus-visible img {
+  transform: scale(1.08);
+  filter: brightness(0.7);
+}
+
+#portfolio .item .image::after {
+  content: "View project";
+  position: absolute;
+  inset: 0;                       /* top/right/bottom/left: 0 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;           /* doesn't block click on the image */
+}
+
+#portfolio .item .image:hover::after,
+#portfolio .item .image:focus-visible::after {
+  opacity: 1;
+}
+
+@media (hover: hover) {
+  #portfolio .item .image:hover img {
+    transform: scale(1.08);
+    filter: brightness(0.7);
+  }
+  #portfolio .item .image:hover::after {
+    opacity: 1;
+  }
+}
