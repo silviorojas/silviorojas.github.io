@@ -62,7 +62,7 @@
 
     // ===== Touch swipe  =====
     let startX = 0, startY = 0, tracking = false;
-    const MIN_DISTANCE = 50;   // pminimum criteria to count as a swipe
+    const MIN_DISTANCE = 50;   // minimum criteria to count as a swipe
 
     lightbox.addEventListener('touchstart', (e) => {
         if (e.touches.length !== 1) { tracking = false; return; }  // ignore pinch
