@@ -47,3 +47,69 @@
     opacity: 1;
   }
 }
+
+/* Technical Blog & Labs & CTFs cards */
+#blog .row,
+#labs .row {
+  align-items: flex-start;
+}
+
+.post-card {
+  background: #fff;
+  border: solid 1px rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  box-shadow: 0 0.05em 0.15em 0 rgba(0, 0, 0, 0.05);
+  margin-bottom: 40px;
+  padding: 1.5em;
+  text-align: left;
+}
+
+.post-card h3 {
+  margin-bottom: 0.4em;
+}
+
+.post-card p {
+  line-height: 1.4;
+  margin-bottom: 0.8em;
+}
+
+.post-tags {
+  list-style: none;
+  padding-left: 0;
+  margin: 0 0 1em 0;
+}
+
+.post-tags li {
+  display: inline-block;
+  padding: 0.15em 0.7em;
+  margin: 0 0.3em 0.3em 0;
+  font-size: 0.75em;
+  border-radius: 999px;
+  background: #ecf1f1;
+  color: #41484c;
+}
+
+#blog footer {
+  margin-top: 1em;
+}
+
+
+/* TryHackMe badge */
+.thm-badge {
+  display: flex;
+  justify-content: center;
+  margin: 1.5em 0 1em 0;
+}
+
+/* Profile links (TryHackMe / Hack The Box) */
+.lab-profiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75em;
+  margin-bottom: 2.5em;
+}
+
+.lab-profiles .button {
+  border-bottom: 0;
+}
