@@ -309,3 +309,10 @@
     transition: none;
   }
 }
+
+/* Project modal image: opens in the lightbox */
+#pm-img { cursor: zoom-in; }
+
+/* Lightbox with a single image: no arrows */
+.lightbox.single .lb-prev,
+.lightbox.single .lb-next { display: none; }

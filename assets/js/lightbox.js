@@ -1,15 +1,19 @@
 (function () {
     const images = Array.from(document.querySelectorAll('.about-gallery img'));
+    const projectImg = document.getElementById('pm-img');   // image inside the project modal
     const lightbox = document.getElementById('lightbox');
     const lbImg = document.getElementById('lb-img');
     const lbCaption = document.getElementById('lb-caption');
-    if (!images.length || !lightbox) return;
+    if (!lightbox || (!images.length && !projectImg)) return;
 
+    let items = images;          // images the lightbox is currently navigating
     let current = 0;
+    let prevOverflow = '';       // body overflow before opening (the project modal locks it too)
+    let lastFocus = null;
 
     function show(index, direction) {
-        current = (index + images.length) % images.length;
-        const img = images[current];
+        current = (index + items.length) % items.length;
+        const img = items[current];
 
         const apply = () => {
             lbImg.src = img.dataset.full || img.src;
@@ -27,23 +31,44 @@
         }
     }
 
-    const next = () => show(current + 1, 'next');
-    const prev = () => show(current - 1, 'prev');
+    const next = () => { if (items.length > 1) show(current + 1, 'next'); };
+    const prev = () => { if (items.length > 1) show(current - 1, 'prev'); };
 
-    function open(index) {
+    // list: the set of images to navigate (defaults to the About gallery).
+    // With a single image, the arrows are hidden via the .single class.
+    function open(index, list) {
+        items = list || images;
+        lightbox.classList.toggle('single', items.length < 2);
         show(index);
+
+        lastFocus = document.activeElement;
+        prevOverflow = document.body.style.overflow;
         lightbox.classList.add('open');
         lightbox.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
+        lightbox.querySelector('.lb-close').focus();
     }
 
     function close() {
         lightbox.classList.remove('open');
         lightbox.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = '';
+        // Restore the previous value: if the project modal is open underneath,
+        // the page must stay locked.
+        document.body.style.overflow = prevOverflow;
+        if (lastFocus) lastFocus.focus();
     }
 
+    // About gallery
     images.forEach((img, i) => img.addEventListener('click', () => open(i)));
+
+    // Project modal image (single-image mode)
+    if (projectImg) {
+        projectImg.addEventListener('click', () => {
+            if (!projectImg.getAttribute('src')) return;
+            open(0, [projectImg]);
+        });
+    }
+
     lightbox.querySelector('.lb-close').addEventListener('click', close);
     lightbox.querySelector('.lb-prev').addEventListener('click', prev);
     lightbox.querySelector('.lb-next').addEventListener('click', next);
@@ -55,7 +80,12 @@
     // Keyboard
     document.addEventListener('keydown', (e) => {
         if (!lightbox.classList.contains('open')) return;
-        if (e.key === 'Escape') close();
+        if (e.key === 'Escape') {
+            // This file loads before project-modal.js, so stopping propagation here
+            // keeps Escape from also closing the project modal underneath.
+            e.stopImmediatePropagation();
+            close();
+        }
         if (e.key === 'ArrowLeft') prev();
         if (e.key === 'ArrowRight') next();
     });
