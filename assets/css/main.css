@@ -2877,3 +2877,21 @@ input, select, textarea {
 #header .cv-btn .icon:before {
 	margin-right: 0.5em;
 }
+
+/* Contact Form */
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
+
+#form-status { margin-top: 1em; }
+#form-status.success { color: #7bd88f; }
+#form-status.error { color: #ff8a80; }
+

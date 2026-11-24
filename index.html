@@ -108,7 +108,7 @@
 									<div class="timeline-dot"></div>
 
 									<div class="timeline-card">
-										<span class="timeline-date">Jan 2025 – Present</span>
+										<span class="timeline-date">Jan 2025 - Present</span>
 
 										<h3>Freelance IT Support</h3>
 										<h4>Independent Professional</h4>
@@ -156,7 +156,7 @@
 									<div class="timeline-image">
 											<img
 												src="images/workplaces/japan.webp"
-												alt="Accenture office building"
+												alt="Kagawa, Japan"
 												loading="lazy"
 											/>
 									</div>
@@ -181,7 +181,7 @@
 									<div class="timeline-dot"></div>
 
 									<div class="timeline-card">
-										<span class="timeline-date">Apr 2021 – Dec 2023</span>
+										<span class="timeline-date">Apr 2021 - Dec 2023</span>
 
 										<h3>AMR Firewall &amp; VPN Administrator</h3>
 										<h4>Accenture</h4>
@@ -262,7 +262,7 @@
 									<div class="timeline-dot"></div>
 
 									<div class="timeline-card">
-										<span class="timeline-date">Jan 2020 – Dec 2020</span>
+										<span class="timeline-date">Jan 2020 - Dec 2020</span>
 
 										<h3>Network Administrator</h3>
 										<h4>Secretaría de Medios y Comunicación Pública</h4>
@@ -307,7 +307,7 @@
 									<div class="timeline-dot"></div>
 
 									<div class="timeline-card">
-										<span class="timeline-date">Jan 2016 – Jan 2019</span>
+										<span class="timeline-date">Jan 2016 - Jan 2019</span>
 
 										<h3>Network Administrator</h3>
 										<h4>Sistema Federal de Medios y Contenidos Públicos</h4>
@@ -350,7 +350,7 @@
 									<div class="timeline-dot"></div>
 
 									<div class="timeline-card">
-										<span class="timeline-date">Jan 20215 – Dec 2015</span>
+										<span class="timeline-date">Jan 2015 - Dec 2015</span>
 
 										<h3>Computer Network Operator</h3>
 										<h4>Ministerio de Planificación Federal, Inversión Pública y Servicios</h4>
@@ -743,19 +743,32 @@
 							Based in Buenos Aires, Argentina. Available for remote / hybrid / on-site.
 							<a href="mailto:rojassilvioomar@gmail.com">rojassilvioomar@gmail.com</a> - <a href="https://www.linkedin.com/in/rojassilvioomar/" target="_blank" rel="noopener noreferrer">LinkedIn</a></p>
 							
-							<form method="POST" action="https://formspree.io/f/xyewdkje">
+							<form id="contact-form" method="POST" action="https://formspree.io/f/xyewdkje">
 								<div class="row">
-									<div class="col-6 col-12-mobile"><input type="text" name="name" placeholder="Name" /></div>
-									<div class="col-6 col-12-mobile"><input type="text" name="email" placeholder="Email" /></div>
-									<div class="col-12">
-										<textarea name="message" placeholder="Message"></textarea>
+									<div class="col-6 col-12-mobile">
+										<label for="cf-name" class="sr-only">Name</label>
+										<input type="text" id="cf-name" name="name" placeholder="Name" autocomplete="name" required />
+									</div>
+									<div class="col-6 col-12-mobile">
+										<label for="cf-email" class="sr-only">Email</label>
+										<input type="email" id="cf-email" name="email" placeholder="Email" autocomplete="email" required />
 									</div>
 									<div class="col-12">
+										<label for="cf-message" class="sr-only">Message</label>
+										<textarea id="cf-message" name="message" placeholder="Message" rows="6" required></textarea>
+									</div>
+
+									<!-- Anti-spam honeypot: humans don’t see it, bots fill it out -->
+									<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true" />
+									<!-- Subject line of the email I receive -->
+									<input type="hidden" name="_subject" value="New message from my portfolio" />
+
+									<div class="col-12">
 										<input type="submit" value="Send Message" />
+										<p id="form-status" role="status" aria-live="polite"></p>
 									</div>
 								</div>
 							</form>
-							
 
 						</div>
 					</section>
@@ -807,6 +820,7 @@
 			<script src="assets/js/main.js"></script>
 			<script src="assets/js/lightbox.js"></script>
 			<script src="assets/js/project-modal.js"></script>
+			<script src="assets/js/contact-form.js"></script>
 
 	</body>
 </html>
