@@ -1,5 +1,5 @@
 @import url("fontawesome-all.min.css");
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,600");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;500;700&display=swap");
 @import "custom.css";
 
 /*
@@ -85,9 +85,9 @@ input, select, textarea {
 
 	body {
 		background: #fff;
-		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 19pt;
-		font-weight: 300;
+		font-family: 'Inter', Helvetica, Arial, sans-serif;
+		font-size: 15pt;
+		font-weight: 400;
 		line-height: 1.75em;
 		color: #888;
 	}
@@ -103,16 +103,21 @@ input, select, textarea {
 			transition: none !important;
 		}
 
+	button {
+		font-family: inherit;
+	}
+
 	input, textarea, select {
-		font-family: 'Source Sans Pro', sans-serif;
-		font-size: 19pt;
-		font-weight: 300;
+		font-family: 'Inter', Helvetica, Arial, sans-serif;
+		font-size: 15pt;
+		font-weight: 400;
 		line-height: 1.75em;
 		color: #666;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
-		font-weight: 300;
+		font-family: 'Space Grotesk', 'Inter', Helvetica, Arial, sans-serif;
+		font-weight: 500;
 		color: #666666;
 		line-height: 1.5em;
 	}
@@ -156,7 +161,7 @@ input, select, textarea {
 	}
 
 	strong, b {
-		font-weight: 300;
+		font-weight: 600;
 		color: #666;
 	}
 
@@ -2646,13 +2651,13 @@ input, select, textarea {
 		/* Basic */
 
 			body, input, textarea, select {
-				font-size: 14pt;
+				font-size: 12pt;
 			}
 
 			h2 {
 				font-size: 1.5em;
 				letter-spacing: 0;
-				font-weight: 300;
+				font-weight: 500;
 			}
 
 			.container {
