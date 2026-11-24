@@ -1,5 +1,6 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Grotesk:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@400;600&family=Space+Grotesk:wght@400;500;700&display=swap");
 @import "custom.css";
 
 /*
@@ -2895,3 +2896,100 @@ input, select, textarea {
 #form-status.success { color: #7bd88f; }
 #form-status.error { color: #ff8a80; }
 
+/* ===== Hero terminal ===== */
+.terminal {
+	max-width: 640px;
+	margin: 0 auto 2em auto;
+	overflow: hidden;
+	text-align: left;
+	border-radius: 0.5em;
+	background: rgba(15, 17, 19, 0.88);
+	box-shadow: 0 0.5em 1.5em rgba(0, 0, 0, 0.35);
+	font-family: 'JetBrains Mono', Consolas, Menlo, 'Courier New', monospace;
+}
+
+.terminal .term-bar {
+	display: flex;
+	align-items: center;
+	padding: 0.6em 0.9em;
+	background: rgba(255, 255, 255, 0.06);
+}
+
+.terminal .term-bar span {
+	display: inline-block;
+	width: 0.7em;
+	height: 0.7em;
+	margin-right: 0.4em;
+	border-radius: 50%;
+}
+
+.terminal .term-bar span:nth-child(1) { background: #ff5f56; }
+.terminal .term-bar span:nth-child(2) { background: #ffbd2e; }
+.terminal .term-bar span:nth-child(3) { background: #27c93f; }
+
+.terminal .term-bar em {
+	margin-left: 0.6em;
+	font-size: 0.6em;
+	font-style: normal;
+	color: #8a9499;
+}
+
+.terminal .term-body {
+	padding: 1em 1.1em 1.1em 1.1em;
+	font-size: 0.6em;
+	line-height: 1.7em;
+	color: #aab4b9;
+	overflow-x: auto;
+}
+
+.terminal .t-row,
+.terminal .t-line {
+	display: block;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+/* Prompt y comando */
+.terminal .t-prompt,
+.terminal .t-line[data-type="cmd"]:before {
+	color: #8ebebc;
+}
+
+.terminal .t-line[data-type="cmd"]:before {
+	content: '$ ';
+}
+
+.terminal .t-cmd .t-text,
+.terminal .t-line[data-type="cmd"] {
+	color: #fff;
+}
+
+/* Cursor parpadeante */
+.terminal .t-cursor {
+	display: inline-block;
+	width: 0.55em;
+	height: 1.1em;
+	margin-left: 2px;
+	vertical-align: text-bottom;
+	background: #8ebebc;
+	animation: t-blink 1s steps(1) infinite;
+}
+
+@keyframes t-blink {
+	50% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.terminal .t-cursor { animation: none; }
+}
+
+/* Hero: menos espacio arriba para subir la terminal */
+#main > section.cover {
+	padding-top: 3em;
+}
+
+@media screen and (max-width: 736px) {
+	#main > section.cover {
+		padding-top: 2em;
+	}
+}
