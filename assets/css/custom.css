@@ -488,3 +488,97 @@
         height: 160px;
     }
 }
+
+
+/* ===== Project modal: rich content (sections, gallery, links) ===== */
+.pm-body .pm-lead {
+  font-size: 1.05em;
+  line-height: 1.55;
+  margin-bottom: 1.2em;
+}
+
+.pm-body h4 {
+  color: #fff;
+  font-size: 1em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 1.6em 0 0.6em 0;
+  padding-bottom: 0.35em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.pm-body ul {
+  list-style: disc;
+  margin: 0 0 1em 1.2em;
+  padding: 0;
+}
+
+.pm-body li {
+  line-height: 1.5;
+  margin-bottom: 0.35em;
+}
+
+/* Quick facts (role, type, tools...) */
+.pm-meta {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.35em 1em;
+  margin: 0 0 1.2em 0;
+  font-size: 0.9em;
+  opacity: 0.9;
+}
+.pm-meta dt { font-weight: 600; color: #4ed7f1; }
+.pm-meta dd { margin: 0; }
+
+/* Screenshot gallery (click -> lightbox) */
+.pm-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.6em;
+  margin: 0 0 1.2em 0;
+}
+.pm-gallery img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: zoom-in;
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+.pm-gallery img:hover { transform: scale(1.03); filter: brightness(1.1); }
+
+@media screen and (max-width: 736px) {
+  .pm-gallery { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Tags inside the dark modal */
+.pm-body .post-tags li {
+  background: rgba(78, 215, 241, 0.12);
+  color: #4ed7f1;
+}
+
+/* Link buttons */
+.pm-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6em;
+  margin-top: 1.2em;
+}
+.pm-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.55em 1em;
+  border: 1px solid #4ed7f1;
+  border-radius: 4px;
+  color: #4ed7f1;
+  font-size: 0.85em;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.pm-links a:hover {
+  background: #4ed7f1;
+  color: #222629;
+}

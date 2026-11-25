@@ -69,6 +69,18 @@
         });
     }
 
+    // Project modal gallery (several screenshots).
+    // The modal content is injected with innerHTML, so we use event delegation.
+    const pmContent = document.getElementById('pm-content');
+    if (pmContent) {
+        pmContent.addEventListener('click', (e) => {
+            const thumb = e.target.closest('.pm-gallery img');
+            if (!thumb) return;
+            const list = Array.from(pmContent.querySelectorAll('.pm-gallery img'));
+            open(list.indexOf(thumb), list);
+        });
+    }
+
     lightbox.querySelector('.lb-close').addEventListener('click', close);
     lightbox.querySelector('.lb-prev').addEventListener('click', prev);
     lightbox.querySelector('.lb-next').addEventListener('click', next);
