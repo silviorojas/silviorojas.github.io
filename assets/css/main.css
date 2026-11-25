@@ -2983,7 +2983,7 @@ input, select, textarea {
 	.terminal .t-cursor { animation: none; }
 }
 
-/* Hero: menos espacio arriba para subir la terminal */
+/* Hero: less space above to move the terminal up */
 #main > section.cover {
 	padding-top: 3em;
 }
