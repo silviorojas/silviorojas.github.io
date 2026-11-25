@@ -506,11 +506,12 @@
 									<!-- Full description: used as the content of the project modal -->
 									<div class="description-box" hidden>
 										<p class="pm-lead">I had been planning to develop a portfolio website to display my technical skills for quite some time, and I ultimately decided to built it using HTML, CSS and JavaScript, based on the Prologue template by HTML5 UP and hosted on GitHub Pages.
+										Customized with AI assistance (Claude &amp; ChatGPT).
 										A technical portfolio demonstrates practical skills, real-world problem-solving abilities, and hands-on experience, providing tangible evidence of my expertise in network administration, infrastructure, and cybersecurity beyond what a CV alone can communicate.</p>
 
 										<dl class="pm-meta">
 											<dt>Type</dt><dd>Website Deployment &amp; Configuration</dd>
-											<dt>Role</dt><dd>Web Developer &amp; Implementer</dd>
+											<dt>Role</dt><dd>Design direction, Implementer &amp; AI-assisted development</dd>
 											<dt>Duration</dt><dd>1 week</dd>
 											<dt>Tools</dt><dd>GitHub, HTML5 UP, Unsplash, Font Awesome, CloudFlare, Formspree.</dd>
 											<dt>Technologies</dt><dd>HTML, CSS, JS, Git Bash, Windows Terminal.</dd>
@@ -573,7 +574,7 @@
 										<dl class="pm-meta">
 											<dt>Type</dt><dd>Network design &amp; simulation</dd>
 											<dt>Role</dt><dd>Designer and implementer</dd>
-											<dt>Duration</dt><dd>1-2 weeks</dd>
+											<dt>Duration</dt><dd>2 weeks</dd>
 											<dt>Tools</dt><dd>Cisco Packet Tracer, NetBox</dd>
 											<dt>Network technologies</dt><dd>VLANs, 802.1Q, STP/PVST+, EtherChannel, HSRP, OSPF, NAT/PAT, ACLs, DHCP Relay, DHCP Snooping, AAA/TACACS+, SSH, FlexConnect</dd>
 											<dt>Configuration interfaces</dt><dd>Cisco IOS CLI, Cisco ASA CLI, Cisco WLC GUI</dd>
@@ -591,9 +592,10 @@
 
 										<h4>Goals</h4>
 										<ul>
-											<li>No single point of failure at the core and distribution layers.</li>
-											<li>Segmentation by department with controlled inter-VLAN access.</li>
-											<li>Secure remote administration and centralized authentication.</li>
+											<li>Build a secure perimeter with zone-based segmentation. Design a Cisco ASA firewall with four security zones (OUTSIDE 0, GUEST 10, DMZ 50, INSIDE 100)</li>
+											<li>Ensure high availability and redundancy at every layer.</li>
+											<li>Segment the internal network by department and function. Organize 16 VLANs with a VLSM-based IP plan (/22, /23, /24, /25, /27, /30), separating departments, servers, voice, wireless and management traffic, with inter-VLAN routing handled by the core switches.</li>
+											<li>Document the design professionally: L2 and L3 diagrams, an IP addressing table and a configuration reference</li>
 										</ul>
 
 										<h4>Architecture</h4>
@@ -607,6 +609,7 @@
 
 										<h4>Security</h4>
 										<ul>
+											<li>Security is built around network segmentation. The Cisco ASA firewall separates traffic into four zones: INSIDE for the internal network, OUTSIDE for internet access, a DMZ for publicly reachable services, and a GUEST zone for Wi-Fi users. Guest and internet traffic cannot reach internal resources unless explicitly permitted.</li>
 											<li>DHCP Snooping and DHCP Relay.</li>
 											<li>AAA with TACACS+ and SSH-only management.</li>
 											<li>Unused ports shutdown (VLAN Blackhole).</li>
@@ -618,6 +621,13 @@
 											<li>Asymmetry with two core switches: If the ASA learns the same networks via both INSIDE1 and INSIDE2 with an equal cost, it will perform ECMP. A flow might exit through one core switch and return via the other, since the ASA is stateful, it will drop the returning traffic. My solution: I configured OSPF with a lower cost on one of the interfaces, making it the primary path and the other a backup.</li>
 											<li>What I would improve next: Implement more granular Access Control Lists (ACLs) on CORE-1 and CORE-2 to enforce INTER-VLAN traffic restrictions.</li>
 											<li>I should distribute Layer 2 and Layer 3 responsibilities between CORE-1 and CORE-2. Currently, CORE-1 acts as the STP root bridge and active HSRP gateway for all VLANs, leaving CORE-2 underutilized. I could assign primary gateway and STP root roles for different VLAN groups across both core switches.</li>
+										</ul>
+
+										<h4>Files and documents</h4>
+										<ul>
+											<li><a href="https://github.com/silviorojas/enterprise-network-cpk/blob/main/docs/RUNA_Network_Technologies_and_Configurations.md" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Network Technologies &amp; Configurations ↗</a></li>
+											<li><a href="https://github.com/silviorojas/enterprise-network-cpk/blob/main/docs/Networks.md" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Networks ↗</a></li>
+											<li><a href="https://github.com/silviorojas/enterprise-network-cpk/blob/main/docs/Departments.md" target="_blank" rel="noopener noreferrer"><i class="fab fa-github" aria-hidden="true"></i> Departments ↗</a></li>
 										</ul>
 
 										<div class="pm-links">
@@ -830,7 +840,6 @@
 					<ul class="copyright">
 						<li>&copy; Silvio Omar Rojas. All rights reserved.</li>
 						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-						<li>Customized with AI assistance</li>
 					</ul>
 
 			</div>
